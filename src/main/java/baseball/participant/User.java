@@ -6,7 +6,7 @@ import java.util.List;
 public class User {
 
     private static User user;
-    private List<Integer> inputNumber;
+    private List<Integer> number;
 
     private User() {
     }
@@ -18,15 +18,15 @@ public class User {
         return user;
     }
 
-    public List<Integer> getInputNumber() {
-        return inputNumber;
+    public List<Integer> getNumber() {
+        return number;
     }
 
     public void setUserNumberFromConsole(String userNumber) {
         String[] arr = userNumber.split("");
-        inputNumber = new ArrayList<>();
+        number = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            inputNumber.add(Integer.parseInt(arr[i]));
+            number.add(Integer.parseInt(arr[i]));
         }
     }
 }

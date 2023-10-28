@@ -1,7 +1,6 @@
 package baseball;
 
 import baseball.participant.*;
-import camp.nextstep.edu.missionutils.Console;
 
 import java.util.Arrays;
 
@@ -28,10 +27,10 @@ public class BaseballGame {
     public void run() {
         narrator.startGame();
         do {
-            computer.setRandomNumber();
+            computer.setComputerNumber();
 
             // 정답 확인용 임시 코드
-             System.out.println(Arrays.toString(computer.getRandomNumber().toArray()));
+             System.out.println(Arrays.toString(computer.getNumber().toArray()));
 
             playGame();
 

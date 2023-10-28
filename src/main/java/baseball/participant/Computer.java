@@ -7,7 +7,7 @@ import java.util.List;
 public class Computer {
 
     private static Computer computer;
-    private List<Integer> randomNumber;
+    private List<Integer> number;
 
     private Computer() {
     }
@@ -19,16 +19,16 @@ public class Computer {
         return computer;
     }
 
-    public List<Integer> getRandomNumber() {
-        return randomNumber;
+    public List<Integer> getNumber() {
+        return number;
     }
 
-    public void setRandomNumber() {
-        randomNumber = new ArrayList<>();
-        while (randomNumber.size() < 3) {
+    public void setComputerNumber() {
+        number = new ArrayList<>();
+        while (number.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
-            if (!this.randomNumber.contains(randomNumber)) {
-                this.randomNumber.add(randomNumber);
+            if (!this.number.contains(randomNumber)) {
+                this.number.add(randomNumber);
             }
         }
     }

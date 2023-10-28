@@ -19,7 +19,7 @@ public class ScoreCalculator {
     public void calculateScore(Computer computer, User user) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (computer.getRandomNumber().get(i).equals(user.getInputNumber().get(j))) {
+                if (computer.getNumber().get(i).equals(user.getNumber().get(j))) {
                     if (i == j) {
                         numOfStrike++;
                         break;

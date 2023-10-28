@@ -6,6 +6,7 @@ public class BaseBallGame extends Scanner {
 
     private static BaseBallGame baseBallGame;
 
+    Narrator narrator = Narrator.getInstance();
     Computer computer = Computer.getInstance();
     User user = User.getInstance();
     ScoreCalculator scoreCalculator = ScoreCalculator.getInstance();
@@ -21,7 +22,7 @@ public class BaseBallGame extends Scanner {
     }
 
     public void run() {
-        System.out.print(Narrator.START_GAME);
+        narrator.StartGame();
         do {
             computer.setRandomNumber();
 
@@ -30,13 +31,13 @@ public class BaseBallGame extends Scanner {
 
             guessNumber();
 
-            System.out.println(Narrator.ASK_END_OR_NOT);
+            narrator.ChooseEndOrNot();
         } while (!isEnd());
     }
 
     private void guessNumber() {
         do {
-            System.out.print(Narrator.ENTER_NUMBER);
+            narrator.EnterNumber();
             user.setUserNumberFromConsole();
             scoreCalculator.calculateScore(computer, user);
             scoreCalculator.printOutScore();

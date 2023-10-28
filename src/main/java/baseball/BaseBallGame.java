@@ -21,7 +21,7 @@ public class BaseBallGame extends Scanner {
     }
 
     public void run() {
-        System.out.print(OutputMessage.START_GAME);
+        System.out.print(Narrator.START_GAME);
         do {
             computer.setRandomNumber();
 
@@ -30,13 +30,13 @@ public class BaseBallGame extends Scanner {
 
             guessNumber();
 
-            System.out.println(OutputMessage.ASK_END_OR_NOT);
+            System.out.println(Narrator.ASK_END_OR_NOT);
         } while (!isEnd());
     }
 
     private void guessNumber() {
         do {
-            System.out.print(OutputMessage.ENTER_NUMBER);
+            System.out.print(Narrator.ENTER_NUMBER);
             user.setUserNumberFromConsole();
             scoreCalculator.calculateScore(computer, user);
             scoreCalculator.printOutScore();

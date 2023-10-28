@@ -6,13 +6,13 @@ public class CheckException {
 
     public void guessNumberException(String st) {
         if (!st.matches(USER_NUM_REG_EX)) {
-            throw new IllegalArgumentException(OutputMessage.USER_NUM_REG_EX);
+            throw new IllegalArgumentException(Narrator.USER_NUM_REG_EX);
         }
     }
 
     public void endNumberException(String st) {
         if (!st.matches(END_OR_NOT)) {
-            throw new IllegalArgumentException(OutputMessage.END_OR_NOT);
+            throw new IllegalArgumentException(Narrator.END_OR_NOT);
         }
     }
 }

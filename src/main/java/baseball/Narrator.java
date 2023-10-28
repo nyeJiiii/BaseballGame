@@ -1,6 +1,6 @@
 package baseball;
 
-public class OutputMessage {
+public class Narrator {
 
     public static final String START_GAME = "숫자 야구 게임을 시작합니다.";
     public static final String ENTER_NUMBER = "\n숫자를 입력해주세요 : ";

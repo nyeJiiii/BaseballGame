@@ -1,7 +1,4 @@
-package baseball;
-
-import baseball.participant.Computer;
-import baseball.participant.User;
+package baseball.participant;
 
 public class ScoreCalculator {
 

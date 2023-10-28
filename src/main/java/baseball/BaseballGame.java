@@ -2,14 +2,16 @@ package baseball;
 
 import baseball.participant.Computer;
 import baseball.participant.Narrator;
+import baseball.participant.ScoreCalculator;
 import baseball.participant.User;
+import baseball.participant.ExceptionManager;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.Arrays;
 
-public class BaseBallGame {
+public class BaseballGame {
 
-    private static BaseBallGame baseBallGame;
+    private static BaseballGame baseBallGame;
     private final String RETRY_GAME = "1";
 
     Narrator narrator = Narrator.getInstance();
@@ -18,12 +20,12 @@ public class BaseBallGame {
     ScoreCalculator scoreCalculator = ScoreCalculator.getInstance();
     ExceptionManager exceptionManager = ExceptionManager.getInstance();
 
-    private BaseBallGame() {
+    private BaseballGame() {
     }
 
-    public static BaseBallGame getInstance() {
+    public static BaseballGame getInstance() {
         if (baseBallGame == null) {
-            baseBallGame = new BaseBallGame();
+            baseBallGame = new BaseballGame();
         }
         return baseBallGame;
     }
@@ -58,11 +60,11 @@ public class BaseBallGame {
         return string;
     }
 
-    public boolean retryGame() {
+    private boolean retryGame() {
         return readLineForSelectedValue();
     }
 
-    protected boolean readLineForSelectedValue() {
+    private boolean readLineForSelectedValue() {
         String string = Console.readLine();
         exceptionManager.checkWrongSelectedValueException(string);
         return string.equals(RETRY_GAME);

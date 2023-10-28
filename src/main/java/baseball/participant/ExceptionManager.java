@@ -1,7 +1,7 @@
-package baseball;
+package baseball.participant;
 
-import static baseball.ErrorMessage.ERROR_WRONG_SELECTED_VALUE;
-import static baseball.ErrorMessage.ERROR_WRONG_USER_NUMBER;
+import static baseball.util.ErrorMessage.ERROR_WRONG_SELECTED_VALUE;
+import static baseball.util.ErrorMessage.ERROR_WRONG_USER_NUMBER;
 
 public class ExceptionManager {
 

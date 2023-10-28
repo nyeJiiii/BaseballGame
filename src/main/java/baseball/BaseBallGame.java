@@ -1,5 +1,7 @@
 package baseball;
 
+import java.util.Arrays;
+
 public class BaseBallGame extends Scanner {
 
     private static BaseBallGame baseBallGame;
@@ -19,13 +21,12 @@ public class BaseBallGame extends Scanner {
     }
 
     public void run() {
+        System.out.print(OutputMessage.START_GAME);
         do {
-            System.out.print(OutputMessage.START_GAME);
-
             computer.setRandomNumber();
 
             // 정답 확인용 임시 코드
-            // System.out.println(Arrays.toString(computer.getRandomNumber().toArray()));
+             System.out.println(Arrays.toString(computer.getRandomNumber().toArray()));
 
             guessNumber();
 

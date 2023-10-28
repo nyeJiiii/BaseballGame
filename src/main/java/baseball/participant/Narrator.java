@@ -1,4 +1,4 @@
-package baseball;
+package baseball.participant;
 
 public class Narrator {
 

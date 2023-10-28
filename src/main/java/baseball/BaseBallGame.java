@@ -1,5 +1,9 @@
 package baseball;
 
+import baseball.participant.Computer;
+import baseball.participant.Narrator;
+import baseball.participant.User;
+
 import java.util.Arrays;
 
 public class BaseBallGame extends ConsoleReader {

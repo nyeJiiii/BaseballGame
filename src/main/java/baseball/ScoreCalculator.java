@@ -1,5 +1,8 @@
 package baseball;
 
+import baseball.participant.Computer;
+import baseball.participant.User;
+
 public class ScoreCalculator {
 
     private static ScoreCalculator scoreCalculator;

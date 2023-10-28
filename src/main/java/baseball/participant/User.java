@@ -1,4 +1,6 @@
-package baseball;
+package baseball.participant;
+
+import baseball.ConsoleReader;
 
 import java.util.ArrayList;
 import java.util.List;

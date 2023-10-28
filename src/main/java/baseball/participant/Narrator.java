@@ -18,11 +18,11 @@ public class Narrator {
         return narrator;
     }
 
-    public void StartGame() {
+    public void startGame() {
         System.out.print(START_GAME);
     }
 
-    public void EnterNumber() {
+    public void enterNumber() {
         System.out.print(ENTER_NUMBER);
     }
 

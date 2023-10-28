@@ -31,7 +31,7 @@ public class BaseballGame {
     }
 
     public void run() {
-        narrator.StartGame();
+        narrator.startGame();
         do {
             computer.setRandomNumber();
 
@@ -45,7 +45,7 @@ public class BaseballGame {
 
     private void guessNumber() {
         do {
-            narrator.EnterNumber();
+            narrator.enterNumber();
             String userNumber = readLineForUserNumber();
             user.setUserNumberFromConsole(userNumber);
             scoreCalculator.calculateScore(computer, user);

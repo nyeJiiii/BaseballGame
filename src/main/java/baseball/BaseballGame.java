@@ -40,7 +40,6 @@ public class BaseballGame {
 
             guessNumber();
 
-            narrator.ChooseEndOrNot();
         } while (retryGame());
     }
 
@@ -61,6 +60,7 @@ public class BaseballGame {
     }
 
     private boolean retryGame() {
+        narrator.selectRetryOrNot();
         return readLineForSelectedValue();
     }
 

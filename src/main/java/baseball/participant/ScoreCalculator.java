@@ -16,6 +16,14 @@ public class ScoreCalculator {
         return scoreCalculator;
     }
 
+    public int getNumOfBall() {
+        return numOfBall;
+    }
+
+    public int getNumOfStrike() {
+        return numOfStrike;
+    }
+
     public void calculateScore(Computer computer, User user) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -28,19 +36,6 @@ public class ScoreCalculator {
                         break;
                     }
                 }
-            }
-        }
-    }
-
-    public void printOutScore() {
-        if (numOfBall == 0 && numOfStrike == 0) {
-            System.out.print("낫싱");
-        } else {
-            if (!(numOfBall == 0)) {
-                System.out.printf("%d볼 ", numOfBall);
-            }
-            if (!(numOfStrike == 0)) {
-                System.out.printf("%d스트라이크", numOfStrike);
             }
         }
     }

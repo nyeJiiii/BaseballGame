@@ -42,7 +42,9 @@ public class BaseballGame {
             String userNumber = gameManager.readLineForUserNumber();
             user.setUserNumberFromConsole(userNumber);
             scoreCalculator.calculateScore(computer, user);
-            scoreCalculator.printOutScore();
+            gameManager.printOutScore(
+                    scoreCalculator.getNumOfBall(),
+                    scoreCalculator.getNumOfStrike());
 
         } while (!scoreCalculator.isSuccess());
     }

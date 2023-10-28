@@ -1,19 +1,19 @@
 package baseball;
 
-public class Score {
+public class ScoreCalculator {
 
-    private static Score score;
+    private static ScoreCalculator scoreCalculator;
     private int numOfBall;
     private int numOfStrike;
 
-    private Score() {
+    private ScoreCalculator() {
     }
 
-    public static Score getInstance() {
-        if (score == null) {
-            score = new Score();
+    public static ScoreCalculator getInstance() {
+        if (scoreCalculator == null) {
+            scoreCalculator = new ScoreCalculator();
         }
-        return score;
+        return scoreCalculator;
     }
 
     public void calculateScore(Computer computer, User user) {

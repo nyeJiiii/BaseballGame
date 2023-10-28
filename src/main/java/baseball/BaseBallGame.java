@@ -8,7 +8,7 @@ public class BaseBallGame extends Scanner {
 
     Computer computer = Computer.getInstance();
     User user = User.getInstance();
-    Score score = Score.getInstance();
+    ScoreCalculator scoreCalculator = ScoreCalculator.getInstance();
 
     private BaseBallGame() {
     }
@@ -38,9 +38,9 @@ public class BaseBallGame extends Scanner {
         do {
             System.out.print(OutputMessage.ENTER_NUMBER);
             user.setUserNumberFromConsole();
-            score.calculateScore(computer, user);
-            score.printOutScore();
-        } while (!score.isSuccess());
+            scoreCalculator.calculateScore(computer, user);
+            scoreCalculator.printOutScore();
+        } while (!scoreCalculator.isSuccess());
     }
 
     public boolean isEnd() {

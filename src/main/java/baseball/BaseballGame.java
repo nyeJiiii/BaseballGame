@@ -1,10 +1,6 @@
 package baseball;
 
-import baseball.participant.Computer;
-import baseball.participant.Narrator;
-import baseball.participant.ScoreCalculator;
-import baseball.participant.User;
-import baseball.participant.ExceptionManager;
+import baseball.participant.*;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.Arrays;
@@ -12,13 +8,12 @@ import java.util.Arrays;
 public class BaseballGame {
 
     private static BaseballGame baseBallGame;
-    private final String REPLAY_NUMBER = "1";
 
+    GameManager gameManager = GameManager.getInstance();
     Narrator narrator = Narrator.getInstance();
     Computer computer = Computer.getInstance();
     User user = User.getInstance();
     ScoreCalculator scoreCalculator = ScoreCalculator.getInstance();
-    ExceptionManager exceptionManager = ExceptionManager.getInstance();
 
     private BaseballGame() {
     }
@@ -46,27 +41,16 @@ public class BaseballGame {
     private void playGame() {
         do {
             narrator.enterNumber();
-            String userNumber = readLineForUserNumber();
+            String userNumber = gameManager.readLineForUserNumber();
             user.setUserNumberFromConsole(userNumber);
             scoreCalculator.calculateScore(computer, user);
             scoreCalculator.printOutScore();
         } while (!scoreCalculator.isSuccess());
     }
 
-    private String readLineForUserNumber() {
-        String userNumber = Console.readLine();
-        exceptionManager.checkWrongUserNumberException(userNumber);
-        return userNumber;
-    }
-
     private boolean replay() {
         narrator.selectReplayOrNot();
-        return readLineForSelectedValue();
+        return gameManager.readLineForSelectedValue();
     }
 
-    private boolean readLineForSelectedValue() {
-        String selectedValue = Console.readLine();
-        exceptionManager.checkWrongSelectedValueException(selectedValue);
-        return selectedValue.equals(REPLAY_NUMBER);
-    }
 }

@@ -47,17 +47,17 @@ public class BaseballGame {
     private void guessNumber() {
         do {
             narrator.EnterNumber();
-            String st = readLineForUserNumber();
-            user.setUserNumberFromConsole(st);
+            String userNumber = readLineForUserNumber();
+            user.setUserNumberFromConsole(userNumber);
             scoreCalculator.calculateScore(computer, user);
             scoreCalculator.printOutScore();
         } while (!scoreCalculator.isSuccess());
     }
 
     private String readLineForUserNumber() {
-        String string = Console.readLine();
-        exceptionManager.checkWrongUserNumberException(string);
-        return string;
+        String userNumber = Console.readLine();
+        exceptionManager.checkWrongUserNumberException(userNumber);
+        return userNumber;
     }
 
     private boolean retryGame() {
@@ -65,8 +65,8 @@ public class BaseballGame {
     }
 
     private boolean readLineForSelectedValue() {
-        String string = Console.readLine();
-        exceptionManager.checkWrongSelectedValueException(string);
-        return string.equals(RETRY_GAME);
+        String selectedValue = Console.readLine();
+        exceptionManager.checkWrongSelectedValueException(selectedValue);
+        return selectedValue.equals(RETRY_GAME);
     }
 }

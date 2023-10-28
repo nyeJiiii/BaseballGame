@@ -32,7 +32,7 @@ public class BaseBallGame extends ConsoleReader {
             guessNumber();
 
             narrator.ChooseEndOrNot();
-        } while (!isEnd());
+        } while (retryGame());
     }
 
     private void guessNumber() {
@@ -44,7 +44,7 @@ public class BaseBallGame extends ConsoleReader {
         } while (!scoreCalculator.isSuccess());
     }
 
-    public boolean isEnd() {
+    public boolean retryGame() {
         return readLineForSelectedNumber();
     }
 }

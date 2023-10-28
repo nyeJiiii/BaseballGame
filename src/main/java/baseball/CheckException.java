@@ -4,17 +4,17 @@ import static baseball.ErrorMessage.ERROR_WRONG_SELECTED_VALUE;
 import static baseball.ErrorMessage.ERROR_WRONG_USER_NUMBER;
 
 public class CheckException {
-    private final String USER_NUM_REG_EX = "([1-9])(?!\\1)([1-9])(?!\\1|\\2)([1-9])";
-    private final String END_OR_NOT = "[12]";
+    private final String RIGHT_USER_NUMBER = "([1-9])(?!\\1)([1-9])(?!\\1|\\2)([1-9])";
+    private final String RIGHT_SELECTED_VALUE = "[12]";
 
-    public void guessNumberException(String st) {
-        if (!st.matches(USER_NUM_REG_EX)) {
+    public void checkWrongUserNumberException(String st) {
+        if (!st.matches(RIGHT_USER_NUMBER)) {
             throw new IllegalArgumentException(ERROR_WRONG_USER_NUMBER);
         }
     }
 
-    public void endNumberException(String st) {
-        if (!st.matches(END_OR_NOT)) {
+    public void checkWrongSelectedValueException(String st) {
+        if (!st.matches(RIGHT_SELECTED_VALUE)) {
             throw new IllegalArgumentException(ERROR_WRONG_SELECTED_VALUE);
         }
     }

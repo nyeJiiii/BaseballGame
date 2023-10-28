@@ -8,13 +8,13 @@ public class Scanner extends CheckException {
 
     protected String readLineGuessNumber() {
         String string = Console.readLine();
-        guessNumberException(string);
+        checkWrongUserNumberException(string);
         return string;
     }
 
     protected boolean readLineChooseNumber() {
         String string = Console.readLine();
-        endNumberException(string);
+        checkWrongSelectedValueException(string);
         return string.equals(END_NUM);
     }
 }

@@ -40,16 +40,7 @@ public class ScoreCalculator {
         }
     }
 
-    public boolean isSuccess() {
-        if (numOfStrike == 3) {
-            initializeScore();
-            return true;
-        }
-        initializeScore();
-        return false;
-    }
-
-    private void initializeScore() {
+    public void initializeScore() {
         numOfBall = 0;
         numOfStrike = 0;
     }

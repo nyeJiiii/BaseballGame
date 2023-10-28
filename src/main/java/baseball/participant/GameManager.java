@@ -41,7 +41,7 @@ public class GameManager {
             System.out.print(NOTHING);
         } else {
             if (!(numOfBall == 0)) {
-                System.out.print(numOfBall + BALL);
+                System.out.print(numOfBall + BALL + " ");
             }
             if (!(numOfStrike == 0)) {
                 System.out.print(numOfStrike + STRIKE);

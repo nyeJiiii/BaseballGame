@@ -38,6 +38,7 @@ public class BaseballGame {
         System.out.println(Arrays.toString(computer.getNumber().toArray()));
 
         do {
+            scoreCalculator.initializeScore();
             narrator.enterNumber();
             String userNumber = gameManager.readLineForUserNumber();
             user.setUserNumberFromConsole(userNumber);
@@ -46,7 +47,7 @@ public class BaseballGame {
                     scoreCalculator.getNumOfBall(),
                     scoreCalculator.getNumOfStrike());
 
-        } while (!scoreCalculator.isSuccess());
+        } while (scoreCalculator.getNumOfStrike()!=3);
     }
 
     private boolean replay() {

@@ -16,6 +16,7 @@ public class BaseBallGame {
     Computer computer = Computer.getInstance();
     User user = User.getInstance();
     ScoreCalculator scoreCalculator = ScoreCalculator.getInstance();
+    ExceptionManager exceptionManager = ExceptionManager.getInstance();
 
     private BaseBallGame() {
     }
@@ -53,7 +54,7 @@ public class BaseBallGame {
 
     private String readLineForUserNumber() {
         String string = Console.readLine();
-        checkWrongUserNumberException(string);
+        exceptionManager.checkWrongUserNumberException(string);
         return string;
     }
 
@@ -63,7 +64,7 @@ public class BaseBallGame {
 
     protected boolean readLineForSelectedValue() {
         String string = Console.readLine();
-        checkWrongSelectedValueException(string);
+        exceptionManager.checkWrongSelectedValueException(string);
         return string.equals(RETRY_GAME);
     }
 }

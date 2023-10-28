@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class BaseballGame {
 
     private static BaseballGame baseBallGame;
-    private final String RETRY_GAME = "1";
+    private final String REPLAY_NUMBER = "1";
 
     Narrator narrator = Narrator.getInstance();
     Computer computer = Computer.getInstance();
@@ -38,12 +38,12 @@ public class BaseballGame {
             // 정답 확인용 임시 코드
              System.out.println(Arrays.toString(computer.getRandomNumber().toArray()));
 
-            guessNumber();
+            playGame();
 
-        } while (retryGame());
+        } while (replay());
     }
 
-    private void guessNumber() {
+    private void playGame() {
         do {
             narrator.enterNumber();
             String userNumber = readLineForUserNumber();
@@ -59,14 +59,14 @@ public class BaseballGame {
         return userNumber;
     }
 
-    private boolean retryGame() {
-        narrator.selectRetryOrNot();
+    private boolean replay() {
+        narrator.selectReplayOrNot();
         return readLineForSelectedValue();
     }
 
     private boolean readLineForSelectedValue() {
         String selectedValue = Console.readLine();
         exceptionManager.checkWrongSelectedValueException(selectedValue);
-        return selectedValue.equals(RETRY_GAME);
+        return selectedValue.equals(REPLAY_NUMBER);
     }
 }

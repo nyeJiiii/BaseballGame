@@ -27,23 +27,23 @@ public class BaseballGame {
     public void run() {
         narrator.startGame();
         do {
-            computer.setComputerNumber();
-
-            // 정답 확인용 임시 코드
-             System.out.println(Arrays.toString(computer.getNumber().toArray()));
-
             playGame();
-
         } while (replay());
     }
 
     private void playGame() {
+        computer.setComputerNumber();
+
+        // 정답 확인용 임시 코드
+        System.out.println(Arrays.toString(computer.getNumber().toArray()));
+
         do {
             narrator.enterNumber();
             String userNumber = gameManager.readLineForUserNumber();
             user.setUserNumberFromConsole(userNumber);
             scoreCalculator.calculateScore(computer, user);
             scoreCalculator.printOutScore();
+
         } while (!scoreCalculator.isSuccess());
     }
 

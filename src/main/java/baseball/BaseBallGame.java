@@ -3,12 +3,14 @@ package baseball;
 import baseball.participant.Computer;
 import baseball.participant.Narrator;
 import baseball.participant.User;
+import camp.nextstep.edu.missionutils.Console;
 
 import java.util.Arrays;
 
-public class BaseBallGame extends ConsoleReader {
+public class BaseBallGame {
 
     private static BaseBallGame baseBallGame;
+    private final String RETRY_GAME = "1";
 
     Narrator narrator = Narrator.getInstance();
     Computer computer = Computer.getInstance();
@@ -42,13 +44,26 @@ public class BaseBallGame extends ConsoleReader {
     private void guessNumber() {
         do {
             narrator.EnterNumber();
-            user.setUserNumberFromConsole();
+            String st = readLineForUserNumber();
+            user.setUserNumberFromConsole(st);
             scoreCalculator.calculateScore(computer, user);
             scoreCalculator.printOutScore();
         } while (!scoreCalculator.isSuccess());
     }
 
+    private String readLineForUserNumber() {
+        String string = Console.readLine();
+        checkWrongUserNumberException(string);
+        return string;
+    }
+
     public boolean retryGame() {
-        return readLineForSelectedNumber();
+        return readLineForSelectedValue();
+    }
+
+    protected boolean readLineForSelectedValue() {
+        String string = Console.readLine();
+        checkWrongSelectedValueException(string);
+        return string.equals(RETRY_GAME);
     }
 }

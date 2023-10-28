@@ -1,11 +1,9 @@
 package baseball.participant;
 
-import baseball.ConsoleReader;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class User extends ConsoleReader {
+public class User {
 
     private static User user;
     private List<Integer> inputNumber;
@@ -24,8 +22,7 @@ public class User extends ConsoleReader {
         return inputNumber;
     }
 
-    public void setUserNumberFromConsole() {
-        String st = readLineForUserNumber();
+    public void setUserNumberFromConsole(String st) {
         String[] arr = st.split("");
         inputNumber = new ArrayList<>();
         for (int i = 0; i < 3; i++) {

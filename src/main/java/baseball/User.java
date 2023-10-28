@@ -3,7 +3,7 @@ package baseball;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User extends Scanner {
+public class User extends ConsoleReader {
 
     private static User user;
     private List<Integer> inputNumber;
@@ -23,7 +23,7 @@ public class User extends Scanner {
     }
 
     public void setUserNumberFromConsole() {
-        String st = readLineGuessNumber();
+        String st = readLineForUserNumber();
         String[] arr = st.split("");
         inputNumber = new ArrayList<>();
         for (int i = 0; i < 3; i++) {

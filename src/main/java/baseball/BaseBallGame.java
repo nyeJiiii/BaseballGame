@@ -2,7 +2,7 @@ package baseball;
 
 import java.util.Arrays;
 
-public class BaseBallGame extends Scanner {
+public class BaseBallGame extends ConsoleReader {
 
     private static BaseBallGame baseBallGame;
 
@@ -45,6 +45,6 @@ public class BaseBallGame extends Scanner {
     }
 
     public boolean isEnd() {
-        return readLineChooseNumber();
+        return readLineForSelectedNumber();
     }
 }
